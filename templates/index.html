@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container-fluid">
+    {% for key, value in cals.iteritems() %}
+    <div class="row">
+
+            <div class="col-md-4" style="border: 2px; padding-left: 2px">
+
+                <h2>{{ key }}</h2>
+                {{ value }}
+
+            </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

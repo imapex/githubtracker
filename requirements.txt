@@ -1,0 +1,5 @@
+flask
+BeautifulSoup==3.2.1
+Flask-RESTful==0.3.5
+requests
+spark-python
