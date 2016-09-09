@@ -4,6 +4,7 @@ import BeautifulSoup
 import requests
 import os
 
+# TODO need to add data persistence
 
 USERS = [{"githubuser": "kecorbin"}]
 
