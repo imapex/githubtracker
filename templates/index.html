@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
+Here is a summary of the IMAPEX users Github activity.  To add your account to the list simply send a POST to /api/users/add
+with the following data:
+<br>
+
+
+{"githubuser": "yourusername"}
+
 <div class="container-fluid">
     {% for key, value in cals.iteritems() %}
     <div class="row">
