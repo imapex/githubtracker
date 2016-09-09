@@ -2,6 +2,7 @@ from flask import Flask, render_template, Markup
 from flask_restful import Api, Resource, request
 import BeautifulSoup
 import requests
+import os
 
 
 USERS = [{"githubuser": "kecorbin"}]
@@ -33,4 +34,4 @@ class AddMember(Resource):
 api.add_resource(AddMember, '/api/users/add')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=os.getenv("FLASK_DEBUG"))
