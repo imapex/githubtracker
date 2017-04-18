@@ -12,15 +12,11 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 DATABASE_URI = 'sqlite:////tmp/github-flask.db'
-SECRET_KEY = 'development key'
-DEBUG = True
+SECRET_KEY = os.getenv("SECRET_KEY", "FDSLKFJSLKDFJDSLKF")
+DEBUG = os.getenv("DEBUG", False)
 
 # test data
 USERS = []
-
-# Set these values
-GITHUB_CLIENT_ID = os.getenv("CLIENT_ID")
-GITHUB_CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 
 # setup flask
 app = Flask(__name__)
@@ -153,4 +149,4 @@ api.add_resource(AddMember, '/api/users/add')
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True)
+    app.run(debug=DEBUG)
