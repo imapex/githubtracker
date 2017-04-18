@@ -78,7 +78,7 @@ def token_getter():
 
 @app.route('/success')
 @github.authorized_handler
-def success():
+def success(access_token):
     global USERS
     members = github.get('orgs/imapex/members')
     member_ids = [m['login'] for m in members]
