@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-Here is a summary of the IMAPEX users Github activity.  To add your account to the list simply send a POST to /api/users/add
-with the following data:
+Here is a summary of the IMAPEX users Github activity.
+
+If you are a member of the imapex organization, you can resynchronize the user list on this site with the organization membership
+by clicking <a href="/update">Here</a>
 <br>
 
-
-{"githubuser": "yourusername"}
 
 <div class="container-fluid">
     {% for key, value in cals.iteritems() %}
