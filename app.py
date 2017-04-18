@@ -41,6 +41,7 @@ db_session = scoped_session(sessionmaker(autocommit=False,
 Base = declarative_base()
 Base.query = db_session.query_property()
 
+
 # Helpers for Github OAuth integration
 def init_db():
     Base.metadata.create_all(bind=engine)
@@ -73,8 +74,10 @@ def after_request(response):
 @github.access_token_getter
 def token_getter():
     user = g.user
+
     if user is not None:
         return user.github_access_token
+
 
 @app.route('/success')
 @github.authorized_handler
@@ -134,7 +137,9 @@ def index():
 
     return render_template('index.html', cals=cals)
 
+
 class AddMember(Resource):
+
     def post(self):
         global USERS
         req = request
