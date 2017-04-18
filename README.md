@@ -14,3 +14,4 @@ Users can be added by simply sending a POST request to /api/users/add with the f
 
     {"githubuser": "mygithubid"}
 
+
