@@ -85,7 +85,7 @@ def success(access_token):
     USERS = [{"githubuser": str(u)} for u in member_ids]
     print USERS
 
-    return render_template_string("User list updated based on org membership!")
+    return render_template("success.html")
 
 
 @app.route('/authorized')
