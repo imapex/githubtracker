@@ -149,4 +149,4 @@ api.add_resource(AddMember, '/api/users/add')
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=DEBUG)
+    app.run(host='0.0.0.0', debug=DEBUG)
