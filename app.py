@@ -83,7 +83,7 @@ def token_getter():
 @github.authorized_handler
 def success(access_token):
     global USERS
-    members = github.get('orgs/imapex/members&per_page=100')
+    members = github.get('orgs/imapex/members?per_page=100')
     member_ids = [m['login'] for m in members]
     USERS = [{"githubuser": str(u)} for u in member_ids]
     print USERS
